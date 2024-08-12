@@ -1,5 +1,5 @@
 import { Alignment, Button, Navbar } from "@blueprintjs/core";
-import css from "./Navbar.module.scss";
+import css from "./AppNavbar.module.scss";
 import { useNavigate } from "react-router-dom";
 import { ROOT_PATH } from "../constants/constants";
 
