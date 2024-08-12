@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Alignment, Button, Classes, Divider, Navbar } from "@blueprintjs/core";
+import css from "./App.module.scss";
+import { Route, Routes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ROOT_PATH } from "./constants/constants";
+import { About } from "./pages/About";
+import { Home } from "./pages/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  console.log(Classes.DIVIDER);
+  const navigate = useNavigate();
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className={css.AppContainer}>
+      <Navbar className={css.Navbar} fixedToTop={true}>
+        <Navbar.Group align={Alignment.LEFT}>
+          <Navbar.Heading>Idmatt GameDev</Navbar.Heading>
+          <Navbar.Divider />
+          <Button
+            icon="home"
+            text="Home"
+            onClick={() => navigate(ROOT_PATH + "")}
+          />
+          <Navbar.Divider />
+          <Button
+            icon="person"
+            text="About"
+            onClick={() => navigate(ROOT_PATH + "/About")}
+          />
+        </Navbar.Group>
+      </Navbar>
+      <Routes>
+        <Route path={ROOT_PATH + "/"} element={<Home></Home>} />
+        <Route path={ROOT_PATH + "/About"} element={<About></About>} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
