@@ -4,6 +4,7 @@ import { ROOT_PATH } from "./constants/constants";
 import { About } from "./pages/About";
 import { Home } from "./pages/Home";
 import { AppNavbar } from "./components/AppNavbar";
+import { BlogRoutes } from "./util_components/BlogRoutes";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path={ROOT_PATH + "/"} element={<Home></Home>} />
         <Route path={ROOT_PATH + "/About"} element={<About></About>} />
+        <BlogRoutes></BlogRoutes>
       </Routes>
     </div>
   );
