@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Route, Routes } from "react-router-dom";
 import { BlogPage } from "../components/BlogPage";
 import { BlogLoadedMetadata } from "../App";
+import { ROOT_PATH } from "../constants/constants";
 
 export interface BlogRoutesProps {
   blogLoadedMetadataList: BlogLoadedMetadata[];
@@ -15,7 +16,8 @@ interface BlogRouteMetadata {
 export const BlogRoutes = (_props: BlogRoutesProps) => {
   const blogRouteMetadataList: BlogRouteMetadata[] =
     _props.blogLoadedMetadataList.map((metadata) => {
-      const markdownPath = `../blog_markdowns/${metadata.markdownFileName}.md`;
+      const markdownPath =
+        ROOT_PATH + `/blog_markdowns/${metadata.markdownFileName}.md`;
       return {
         path: metadata.pathFromBlogRoot,
         element: <BlogPage markdownPath={markdownPath}></BlogPage>,
