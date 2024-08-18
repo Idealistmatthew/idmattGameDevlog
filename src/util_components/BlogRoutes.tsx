@@ -15,7 +15,7 @@ interface BlogRouteMetadata {
 export const BlogRoutes = (_props: BlogRoutesProps) => {
   const blogRouteMetadataList: BlogRouteMetadata[] =
     _props.blogLoadedMetadataList.map((metadata) => {
-      const markdownPath = `/blog_markdowns/${metadata.markdownFileName}.md`;
+      const markdownPath = `../blog_markdowns/${metadata.markdownFileName}.md`;
       return {
         path: metadata.pathFromBlogRoot,
         element: <BlogPage markdownPath={markdownPath}></BlogPage>,
