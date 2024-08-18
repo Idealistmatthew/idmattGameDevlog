@@ -10,6 +10,7 @@ interface IBlogPage {
 export const BlogPage = (_props: IBlogPage) => {
   const [markdownContent, setMarkdownContent] = useState("");
   useEffect(() => {
+    console.log(_props.markdownPath);
     fetch(_props.markdownPath)
       .then((response) => response.text())
       .then((text) => setMarkdownContent(text));
