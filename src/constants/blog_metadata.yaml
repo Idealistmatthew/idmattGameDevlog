@@ -4,4 +4,4 @@ metadata:
     # Dates will be given in a DD/MM/YYY format
     date: 17/08/2024
     pathFromBlogRoot: MattCanGameDev
-    pathToMarkdown: sample_blog.md
+    markdownFileName: sample_blog

@@ -1,3 +1,3 @@
-# Markdown
+# This is a sample Markdown Blog
 
-Hi this is markdown blog
+Hi This is finally working. Maybe gamedev is going to happen soon!
