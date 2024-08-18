@@ -9,8 +9,7 @@ interface IBlogCard {
 }
 
 export const BlogCard = (_props: IBlogCard) => {
-  const { name, desc, date, pathFromBlogRoot, markdownFileName } =
-    _props.blogLoadedMetadata;
+  const { name, desc, date, pathFromBlogRoot } = _props.blogLoadedMetadata;
 
   const navigate = useNavigate();
 

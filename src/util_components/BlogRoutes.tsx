@@ -1,6 +1,5 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { Route, Routes } from "react-router-dom";
-import { ROOT_PATH } from "../constants/constants";
 import { BlogPage } from "../components/BlogPage";
 import { BlogLoadedMetadata } from "../App";
 
